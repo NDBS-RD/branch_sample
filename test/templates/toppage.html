@@ -1,0 +1,31 @@
+{% extends "layout.html" %}    <!-- これで元になるHTML(laytout.html)を指定 -->
+
+{% block body %}    <!-- layout.htmlのbodyというブロックを以下で置き換える -->
+  <form action="{{ url_for('add_entry') }}" method=post class=add-entry>
+    <div class="tab_wrap">
+      <input id="tab1" type="radio" name="tab_btn" checked>
+      <input id="tab2" type="radio" name="tab_btn">
+      <input id="tab3" type="radio" name="tab_btn">
+      
+      <div class="tab_area">
+        <label id="tabfirst" class="tab1_label" for="tab1">基本情報</label>
+        <label id="tabsecond" class="tab2_label" for="tab2">行動履歴詳細</label>
+        <label id="tabthird" class="tab3_label" for="tab3">その他</label>
+      </div>
+
+      <div class="panel_area">
+        <div id="panel1" class="tab_panel">
+          {% include "register_tab1.html" %}
+        </div>
+
+        <div id="panel2" class="tab_panel">
+          {% include "register_tab2.html" %}
+        </div>
+
+        <div id="panel3" class="tab_panel">
+          {% include "register_tab3.html" %}
+        </div>
+      </div>
+    </div>
+  </form>
+{% endblock %}

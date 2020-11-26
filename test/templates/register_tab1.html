@@ -1,0 +1,37 @@
+<div class="grid-x grid-padding-x">
+  <dl class="cell small-3">
+    <dt class="item-title">出社先ビル名:
+      <dd><select id="loppiChoice" name="loppiChoice" data-tooltip data-allow-html="true" data-position="top" data-alignment="center" title="リストから選択して下さい。">
+        <option value="ss">品川シーズンテラス</option>
+        <option value="as">アレア品川</option>
+        </select>
+    </dt>
+  </dl>
+  <div class="cell small-1"></div>
+  <dl class="cell small-2">
+    <dt class="item-title">滞在時間:
+      <dd><input type="text" data-tooltip tabindex="5" id="jancd" name="jancd" data-position="top" data-alignment="center" title="8～13桁の半角数字で入力してください。">
+    </dt>
+  </dl>
+  <div class="cell small-2"></div>
+  <dl class="cell small-2">
+    <dt class="item-title">体温(記録時):
+      <dd><input type="text" data-tooltip tabindex="5" id="jancd" name="jancd" data-position="top" data-alignment="center" title="8～13桁の半角数字で入力してください。">
+    </dt>
+  </dl>
+  <div class="cell small-2">
+    <a href="#" data-tooltip tabindex="" id="historyDetail" name="historyDetail" data-position="top" data-alignment="center" title="行動履歴詳細">
+        <i class="far fa-list-alt fa-2x base-color"></i>
+    </a>
+  </div>
+</div>
+
+<dl>
+  <dt class="item-title">体調面特記事項:
+    <dd><textarea name="taityo" rows="4"></textarea>
+  <dt class="item-title">その他備考:
+    <dd><textarea name="other" rows="3"></textarea>
+  <!-- <dt class="item-title">誕生日:
+  <dd><input type=date name=birthday>  -->
+  <dd><input type=submit value="登録">
+</dl>
