@@ -1,6 +1,7 @@
 from flask import Flask, request, flash, redirect, url_for, render_template
 from flask_pymongo import PyMongo
 from dateutil.parser import parse
+import datetime
 
 
 app = Flask(__name__)
@@ -25,11 +26,12 @@ mongo = PyMongo(app)
 def show_entry():
     entries = []
     users = mongo.db.user.find()
+    today = datetime.date.today().strftime('%Y/%m/%d')
 
     for row in users:
         entries.append({"name": row['name'], "birthday": row['birthday'].strftime("%Y/%m/%d")})
 
-    return render_template('toppage.html', entries=entries)
+    return render_template('toppage.html', currentDate=today)
 
 
 @app.route('/add', methods=['POST'])

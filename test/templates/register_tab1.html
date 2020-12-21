@@ -8,22 +8,22 @@
     </dt>
   </dl>
   <div class="cell small-1"></div>
-  <dl class="cell small-2">
-    <dt class="item-title">滞在時間:
-      <dd><input type="text" data-tooltip tabindex="5" id="jancd" name="jancd" data-position="top" data-alignment="center" title="8～13桁の半角数字で入力してください。">
+  <dl class="cell small-3">
+    <dt class="item-title">出社日付:
+      <dd><input type="date" data-tooltip tabindex="" id="workingDay" name="workingDay" data-position="top" data-alignment="center" title="出社日を指定して下さい。" required>
     </dt>
   </dl>
   <div class="cell small-2"></div>
   <dl class="cell small-2">
     <dt class="item-title">体温(記録時):
-      <dd><input type="text" data-tooltip tabindex="5" id="jancd" name="jancd" data-position="top" data-alignment="center" title="8～13桁の半角数字で入力してください。">
+      <dd><input type="number" step=0.1 size=20 name=temperature min=35.0 max=45.0 value=35.0 data-tooltip tabindex="" id="temperature" name="temperature" data-position="top" data-alignment="center" title="体温を小数点第一位まで入力下さい。" required>
     </dt>
   </dl>
-  <div class="cell small-2">
+  <!-- <div class="cell small-1">
     <a href="#" data-tooltip tabindex="" id="historyDetail" name="historyDetail" data-position="top" data-alignment="center" title="行動履歴詳細">
         <i class="far fa-list-alt fa-2x base-color"></i>
     </a>
-  </div>
+  </div> -->
 </div>
 
 <dl>
