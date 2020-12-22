@@ -1,9 +1,9 @@
 <div class="grid-x grid-padding-x">
   <dl class="cell small-3">
     <dt class="item-title">出社先ビル名:
-      <dd><select id="loppiChoice" name="loppiChoice" data-tooltip data-allow-html="true" data-position="top" data-alignment="center" title="リストから選択して下さい。">
-        <option value="ss">品川シーズンテラス</option>
-        <option value="as">アレア品川</option>
+      <dd><select id="bills" name="bills" data-tooltip tabindex="" data-allow-html="true" data-position="top" data-alignment="center" title="リストから選択して下さい。">
+        <option value="品川シーズンテラス">品川シーズンテラス</option>
+        <option value="アレア品川">アレア品川</option>
         </select>
     </dt>
   </dl>
@@ -28,10 +28,10 @@
 
 <dl>
   <dt class="item-title">体調面特記事項:
-    <dd><textarea name="taityo" rows="4"></textarea>
+    <dd><textarea name="taicho" rows="4"></textarea>
   <dt class="item-title">その他備考:
     <dd><textarea name="other" rows="3"></textarea>
-  <!-- <dt class="item-title">誕生日:
-  <dd><input type=date name=birthday>  -->
-  <dd><input type=submit value="登録">
+      
+  <!-- 登録ボタン実装 -->
+  <dd><input type=submit class="btn btn-outline-info" value="登録">
 </dl>

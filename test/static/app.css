@@ -46,4 +46,41 @@ input[type="radio"]{display:none;}
 #tab3:checked ~ .tab_area .tab3_label{background:#3399FF; color:#FFF;}
 #tab3:checked ~ .panel_area #panel3{display:block;}
 
+/* .table-class {
+    border: solid 1px #DDDDDD;
+    border-collapse: collapse;
+} */
 
+td, th {
+    border: solid 1px #DDDDDD;
+}
+
+th {
+    background:#AAAAAA;
+    font-size: 120%;
+}
+
+.hide {
+    display: none;
+}
+
+.hide-template {
+    width: 100%;
+    outline: 0;
+    border: 0px;
+    background: transparent;
+}
+
+.sample1 {
+    display: inline-block;
+    text-align: right;
+    width: 100px;
+    background-color: transparent;
+}
+
+/* .sample2 {
+    display: inline-block;
+    text-align: left;
+    width: 100px;
+    background-color: transparent;
+} */

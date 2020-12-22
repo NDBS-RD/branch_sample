@@ -8,15 +8,10 @@ app = Flask(__name__)
 
 app.secret_key = 'secret'
 
-
-# app.config['MONGO_URI'] = 'mongodb://127.0.0.1:27017/testdb'
-# app.config['MONGO_URI'] = 'mongodb://192.168.99.100:27017/testdb'
-# app.config['MONGO_URI'] = 'mongodb://18.183.180.241:27017/testdb'
-
-# ECS用
+# mongoDBサーバ設定（ECS用）
 # app.config['MONGO_URI'] = 'mongodb://127.0.0.1:27017/testdb'
 
-# mongoDBサーバ(EC2)用
+# mongoDBサーバ設定（ローカル用）
 app.config['MONGO_URI'] = 'mongodb://127.0.0.1:27017/testdb'
 
 mongo = PyMongo(app)
@@ -24,26 +19,48 @@ mongo = PyMongo(app)
 
 @app.route('/', methods=['GET'])
 def show_entry():
+    # 参照機能は追って追加予定（'''部分はコメントアウト）
+    '''
     entries = []
     users = mongo.db.user.find()
-    today = datetime.date.today().strftime('%Y/%m/%d')
+
 
     for row in users:
         entries.append({"name": row['name'], "birthday": row['birthday'].strftime("%Y/%m/%d")})
+    '''
+
+    today = datetime.date.today().strftime('%Y/%m/%d')
 
     return render_template('toppage.html', currentDate=today)
 
 
 @app.route('/add', methods=['POST'])
 def add_entry():
-    mongo.db.user.insert({"name": request.form['name'], "birthday": parse(request.form['birthday'])})
+    '''登録機能実装↓'''
+
+    # 登録フォームの内容をそれぞれ変数に格納
+    billName = request.form['bills']
+    workingDay = parse(request.form['workingDay'])
+    temperature = request.form['temperature']
+    # params = request.form['params']
+
+    # print(params)
+
+
+    # mongoDBに登録
+    mongo.db.base.insert_one({"billName": billName, "workingDay": workingDay, "temperature": temperature})
+
+    # 登録完了後にフラッシュメッセージ生成
     flash('New entry was successfully posted')
 
+    # 登録TOP画面にリダイレクト
     return redirect(url_for('show_entry'))
 
 
 @app.route('/search', methods=['POST'])
 def filter_entry():
+    # 検索機能は追って追加予定
+    '''
     results = []
 
     start = parse(request.form['start'])
@@ -55,6 +72,7 @@ def filter_entry():
         results.append({"name": row['name'], "birthday": row['birthday'].strftime("%Y/%m/%d")})
 
     return render_template('result.html', results=results)
+    '''
 
 @app.route('/historyDetail', methods=['GET'])
 def show_detail():

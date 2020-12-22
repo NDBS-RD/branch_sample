@@ -1,21 +1,21 @@
 <!doctype html>
 <title>TestApp</title>
+<link rel="stylesheet" type=text/css href="{{ url_for('static', filename='bootstrap.min.css') }}">
 <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='foundation.min.css') }}">
 <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='style.css') }}"> <!-- static/style.cssを読み込む -->
 <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='app.css') }}">
 <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
-
-
 <div class="page">
   <div class="grid-x grid-padding-x  template">
     <div class="cell small-8">
       <h1>オンサイト行動履歴登録</h1>
     </div>
-    <div class="cell small-4">
-      <ul>
-        <li>ログイン日：{{ currentDate }}</li>
-        <li>ログインID：4969570</li>
-      </ul>
+    <div class="cell small-1"></div>
+    <div>
+      <div class="sample1">ログイン日：</div>
+      <div class="sample1">{{ currentDate }}</div></br>
+      <div class="sample1">ログインID：</div>
+      <div class="sample1">4969570</div>
     </div>
   </div> 
     {% for message in get_flashed_messages() %}

@@ -9,6 +9,7 @@
         <td><input type="time" id="start_time"></td>
         <td style="text-align: center;">―</td>
         <td><input type="time" id="end_time"></td>
+        <!-- <td><input type="time" id="start_time"></td> -->
       </tr>
       <tr>
         <th>件名</th>
@@ -77,10 +78,28 @@
           <th>マスク着用</th>
           <th>他者との距離</th>
           <th>アクリル板</br>有無</th>
+          <!-- <th>削除</th> -->
         </tr>
     </thead>
     <tbody id="params">
-      <!-- ここにレコードが追加されていく -->
+
+      <tr class="add_row" onclick="let node=this.nextElementSibling.cloneNode(true);node.removeAttribute('id');node.classList.remove('hide');this.parentNode.insertBefore(node,this)">
+          <td colspan="9" style="text-align: center"><i class="fas fa-plus"></i></td>
+      </tr>
+
+      <!-- 1行あたりの雛形が以下 -->
+      <tr class="hide">
+          <td><input type="checkbox" class="hide-template"></td>
+          <td><input class="hide-template"></td>
+          <td><input class="hide-template"></td>
+          <td><input class="hide-template"></td>
+          <td><input class="hide-template"></td>
+          <td><input class="hide-template"></td>
+          <td><input class="hide-template"></td>
+          <td><input class="hide-template"></td>
+          <!-- <td onclick="this.parentNode.outerHTML = ''"><i class="fas fa-ban"></i></td> -->
+          <td><input class="hide-template"></td>
+      </tr>
     </tbody>
   </table>
 </div>
